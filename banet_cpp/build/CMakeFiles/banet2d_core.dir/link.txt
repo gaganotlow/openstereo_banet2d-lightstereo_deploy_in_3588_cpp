@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbanet2d_core.a CMakeFiles/banet2d_core.dir/src/banet2d_infer.cpp.o CMakeFiles/banet2d_core.dir/src/image_utils.cpp.o CMakeFiles/banet2d_core.dir/src/postprocess.cpp.o CMakeFiles/banet2d_core.dir/src/rknn_utils.cpp.o
+/usr/bin/ranlib libbanet2d_core.a

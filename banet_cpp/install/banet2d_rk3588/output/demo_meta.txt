@@ -1,0 +1,9 @@
+model: ./models/checkpoint_epoch_195_optimized_fp16.rknn
+left: ./samples/left.png
+right: ./samples/right.png
+width: 640
+height: 480
+inference_ms: 285.654
+disp_min: 3.49219
+disp_max: 29.875
+disp_mean: 18.6197

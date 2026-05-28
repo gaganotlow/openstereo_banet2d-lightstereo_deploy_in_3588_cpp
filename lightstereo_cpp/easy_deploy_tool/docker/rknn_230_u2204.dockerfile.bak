@@ -1,0 +1,67 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# amd64 image must use ubuntu/ not ubuntu-ports/ (ports is for ARM etc.; amd64 Packages 404 otherwise)
+RUN rm /etc/apt/sources.list && \
+  echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse" >> /etc/apt/sources.list && \
+  echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+  echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
+  echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ jammy-security main restricted universe multiverse" >> /etc/apt/sources.list && \
+  apt-get update
+
+RUN apt-get install -y \
+  build-essential \
+  manpages-dev \
+  wget \
+  software-properties-common \
+  git \
+  libssl-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  wget \
+  ca-certificates \
+  curl \
+  llvm \
+  libncurses5-dev \
+  xz-utils tk-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  libffi-dev \
+  mecab-ipadic-utf8 \
+  sudo \
+  libbenchmark-dev \
+  nlohmann-json3-dev
+
+RUN apt-get install -y \
+  cmake \
+  libopencv-dev \
+  libeigen3-dev \
+  libgoogle-glog-dev \
+  libgtest-dev \
+  libassimp-dev \
+  assimp-utils
+
+# use github release proxy speedup
+# see [https://github.com/hunshcn/gh-proxy]
+RUN cd /tmp && \
+  wget https://gp.zz990099.cn/https://github.com/airockchip/rknn-toolkit2/archive/refs/tags/v2.3.0.tar.gz
+
+RUN cd /tmp && \
+  tar -xzvf v2.3.0.tar.gz && \
+  rm v2.3.0.tar.gz
+
+# Headers only on amd64: librknn_api has aarch64/armhf dirs but no x86_64; toolkit wheel bundles runtime.
+RUN cd /tmp/rknn-toolkit2-2.3.0/rknpu2/runtime/Linux/librknn_api/ && \
+  cp include/* /usr/include/
+
+# rknn-toolkit2 Python (x86_64) for ONNX -> RKNN on PC
+RUN apt-get install python3-pip -y && \
+  pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple && \
+  pip install pip --upgrade && \
+  pip install pycocotools
+
+RUN cd /tmp/rknn-toolkit2-2.3.0/rknn-toolkit2/packages/x86_64 && \
+  pip install rknn_toolkit2-2.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl && \
+  pip install "onnx>=1.14.0,<1.16"

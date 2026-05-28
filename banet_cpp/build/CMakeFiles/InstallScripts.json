@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/orangepi/projects/openstereo/rk3588_cpp/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

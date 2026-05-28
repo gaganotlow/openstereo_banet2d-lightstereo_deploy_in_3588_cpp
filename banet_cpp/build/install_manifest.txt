@@ -1,0 +1,17 @@
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/bin/banet2d_demo
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/librknnrt.so
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_core.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_imgproc.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_features2d.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_calib3d.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_dnn.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_video.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/lib/libopencv_imgcodecs.a
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/models/checkpoint_epoch_195_optimized_fp16.rknn
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/models/checkpoint_epoch_195_fp16.rknn
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/models/checkpoint_epoch_195_int8.rknn
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/samples/left.png
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/samples/right.png
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/scripts/run_demo.sh
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/scripts/check_runtime.sh
+/home/orangepi/projects/openstereo/rk3588_cpp/install/banet2d_rk3588/./README.md

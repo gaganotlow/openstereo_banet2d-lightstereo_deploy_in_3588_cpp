@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblightstereo_core.a CMakeFiles/lightstereo_core.dir/src/lightstereo_infer.cpp.o CMakeFiles/lightstereo_core.dir/src/postprocess.cpp.o CMakeFiles/lightstereo_core.dir/src/rknn_utils.cpp.o CMakeFiles/lightstereo_core.dir/src/image_utils.cpp.o
+/usr/bin/ranlib liblightstereo_core.a
